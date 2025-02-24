@@ -1,11 +1,15 @@
 .toolbar {
     font-weight: 100;
+    width: 100%;
+    background-color: white;
 }
 .toolbar .title{
-    font-size: 2.5rem;
+    font-family: "Inspiration";
+    font-size: 3.5rem;
     font-weight: 500;
-    width: 100%;
     text-align: center;
+    padding: 0rem 0rem 1.5rem 0rem;
+    cursor: default;
 }
 .toolbar ul {
     list-style: none;
@@ -17,32 +21,48 @@
 }
 .toolbar li{
     text-align: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: red;
     width: fit-content;
     padding: 0.5rem;
-    cursor: pointer;
     margin: auto;
 }
+.toolbar li a {
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.page-image {
+    background-color: lime;
+    background-image: url("../Image/backgroundImage.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+    color: rgba(0, 0, 0, 0);
+    height: 30rem;
+    width: 100%;
+    cursor: default;
+}
 
+/* Changes for tablet use */
 @media (max-width: 600px) {
     .toolbar ul {
         width: 75%;
     }
-    .toolbar li {
+    .toolbar li a {
         font-size: 2rem;
     }
 }
 
+/* Changes for phone use */
 @media (max-width: 400px) {
     .toolbar ul {
         width: 100%;
     }
-    .toolbar .title {
-        font-size: 1.5rem;
-    }
-    .toolbar li {
+    .toolbar li a {
         padding: 0rem;
         font-size: 1.5rem;
     }
