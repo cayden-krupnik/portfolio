@@ -1,0 +1,49 @@
+.toolbar {
+    font-weight: 100;
+}
+.toolbar .title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+.toolbar ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 50%;
+    margin: auto;
+    padding: 0rem;
+}
+.toolbar li{
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin: auto;
+}
+
+@media (max-width: 600px) {
+    .toolbar ul {
+        width: 75%;
+    }
+    .toolbar li {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .toolbar ul {
+        width: 100%;
+    }
+    .toolbar .title {
+        font-size: 1.5rem;
+    }
+    .toolbar li {
+        padding: 0rem;
+        font-size: 1.5rem;
+    }
+}
