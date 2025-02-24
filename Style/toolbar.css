@@ -3,13 +3,20 @@
     width: 100%;
     background-color: white;
 }
+.titlebar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 .toolbar .title{
     font-family: "Inspiration";
     font-size: 3.5rem;
     font-weight: 500;
     text-align: center;
-    padding: 0rem 0rem 1.5rem 0rem;
     cursor: default;
+}
+.toolbardiv {
+    width: 100%;
+    height: 1rem;
 }
 .toolbar ul {
     list-style: none;
@@ -19,36 +26,46 @@
     margin: auto;
     padding: 0rem;
 }
-.toolbar li{
+.toolbar a {
+    border-width: .25rem;
+    border-style: solid none none none;
+    border-color: white;
+}
+.toolbar li, .toolbar li a{
+    text-transform: lowercase;
     text-align: center;
+    text-decoration: none;
     width: fit-content;
     padding: 0.5rem;
     margin: auto;
-}
-.toolbar li a {
-    text-align: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: black;
-    padding: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+}
+.toolbar li a:hover {
+    color: skyblue;
+    border-color: skyblue;
 }
 .page-image {
-    background-color: lime;
+    background-color: skyblue;
     background-image: url("../Image/backgroundImage.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
     background-attachment: scroll;
     background-size: cover;
-    text-align: center;
-    color: rgba(0, 0, 0, 0);
+    text-indent: -100%;
     height: 30rem;
     width: 100%;
     cursor: default;
 }
 
 /* Changes for tablet use */
-@media (max-width: 600px) {
+@media screen and (max-width: 800px) {
+    .titlebar {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
     .toolbar ul {
         width: 75%;
     }
@@ -58,12 +75,18 @@
 }
 
 /* Changes for phone use */
-@media (max-width: 400px) {
+@media screen and (max-width: 500px) {
+    .titlebar {
+        grid-template-columns: 1fr 5fr 1fr;
+    }
     .toolbar ul {
         width: 100%;
     }
     .toolbar li a {
         padding: 0rem;
         font-size: 1.5rem;
+    }
+    .page-image {
+        height: 25rem;
     }
 }
