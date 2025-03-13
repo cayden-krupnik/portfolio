@@ -1,89 +1,62 @@
+@import url("page.css");
+
+.headingTitle {
+    font-family: var(--title-font), cursive;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 4rem;
+    font-weight: normal;
+    color: var(--text-color)
+}
+
 .toolbar {
-    font-weight: 100;
-    width: 100%;
-    background-color: white;
-}
-.titlebar{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.toolbar .title{
-    font-family: "Inspiration";
-    font-size: 3.5rem;
-    font-weight: 500;
-    text-align: center;
-    cursor: default;
-}
-.toolbardiv {
-    width: 100%;
-    height: 1rem;
-}
-.toolbar ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     width: 50%;
-    margin: auto;
-    padding: 0rem;
+    margin: 1rem 0;
+    margin-inline: auto;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
 }
-.toolbar a {
-    border-width: .25rem;
-    border-style: solid none none none;
-    border-color: white;
-}
-.toolbar li, .toolbar li a{
-    text-transform: lowercase;
-    text-align: center;
-    text-decoration: none;
-    width: fit-content;
-    padding: 0.5rem;
-    margin: auto;
-    cursor: pointer;
-    text-decoration: none;
+
+.toolbarLink {
+    position: relative;
     font-size: 1.5rem;
-    color: black;
+    font-weight: lighter;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    transition: color 0.2s;
 }
-.toolbar li a:hover {
-    color: skyblue;
-    border-color: skyblue;
+
+.toolbarLink::after {
+    content: "";
+    width: 100%;
+    height: 0.15rem;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: var(--secondary-color);
+    transform: scaleX(0%);
+    transition: transform 0.2s;
 }
-.page-image {
-    background-color: skyblue;
-    background-image: url("../Image/backgroundImage.png");
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    background-attachment: scroll;
-    background-size: cover;
+
+.toolbarLink:hover::after {
+    transform: scaleX(100%);
+}
+
+.toolbarLink:hover {
+    color: var(--secondary-color);
+}
+
+.pageImage {
+    width: 100%;
+    justify-content: center;
     text-indent: -100%;
     height: 30rem;
-    width: 100%;
-    cursor: default;
-}
-
-/* Changes for tablet use */
-@media screen and (max-width: 800px) {
-    .titlebar {
-        grid-template-columns: 1fr 3fr 1fr;
-    }
-    .toolbar ul {
-        width: 100%;
-    }
-    .toolbar li a {
-        font-size: 2rem;
-    }
-}
-
-/* Changes for phone use */
-@media screen and (max-width: 500px) {
-    .titlebar {
-        grid-template-columns: 1fr 5fr 1fr;
-    }
-    .toolbar li a {
-        padding: 0rem;
-        font-size: 1.5rem;
-    }
-    .page-image {
-        height: 25rem;
-    }
+    background-color: var(--secondary-color);
+    background-image: url(../Image/backgroundImage.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
