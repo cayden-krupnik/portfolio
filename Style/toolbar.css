@@ -1,34 +1,38 @@
 @import url("page.css");
 
+/* Navigation Bar Title */
 .headingTitle {
     font-family: var(--title-font), cursive;
-    width: 100%;
+    width: fit-content;
     text-align: center;
-    margin: 1rem 0;
-    font-size: 4rem;
-    font-weight: normal;
-    color: var(--text-color)
+    margin: 1rem auto;
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    font-weight: 500; /*500 - 600*/
+    color: var(--text-color);
+    cursor: default;
 }
 
+/* Navigation Bar */
 .toolbar {
     display: grid;
-    width: 50%;
+    width: fit-content;
     margin: 1rem 0;
     margin-inline: auto;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     justify-items: center;
 }
 
+/* Navigation Bar Links */
 .toolbarLink {
     position: relative;
-    font-size: 1.5rem;
-    font-weight: lighter;
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+    font-weight: 300; /*100 - 900*/
     text-decoration: none;
     color: var(--text-color);
     padding: 0.5rem 1rem;
     transition: color 0.2s;
 }
-
 .toolbarLink::after {
     content: "";
     width: 100%;
@@ -40,23 +44,25 @@
     transform: scaleX(0%);
     transition: transform 0.2s;
 }
-
 .toolbarLink:hover::after {
     transform: scaleX(100%);
 }
-
 .toolbarLink:hover {
     color: var(--secondary-color);
 }
+.toolbarLink.selected {
+    /* Selected Page Style */
+}
 
+/* Hero Image */
 .pageImage {
     width: 100%;
     justify-content: center;
     text-indent: -100%;
     height: 30rem;
     background-color: var(--secondary-color);
-    background-image: url(../Image/backgroundImage.png);
-    background-repeat: no-repeat;
+    background-image: url("../Image/backgroundImage.png");
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
